@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let item of [0,1,2,3,4,5]">
+      
+        <img src="assets/imgs/squat-problem-650x412.jpg"/>
+        <ion-card-content>
+          <ion-card-title text-center>
+            Squat
+            </ion-card-title>
+            <ion-row text-center>
+                <ion-col>
+                  <p>Sets: 5</p>
+                  <p>Reps: 5</p>
+                  
+                </ion-col>
+                <ion-col>
+                    <div class="card-subtitle">30 min</div>
+                </ion-col>
+                <ion-col>
+                    <p>Tempo: 2125</p>
+                    <p>Pause: 5</p>
+                  </ion-col>
+              </ion-row>
+        </ion-card-content>
+      </ion-card>
+</ion-content>
