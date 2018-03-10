@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ApiProvider } from '../api/api';
-import 'rxjs/add/operator/map';    
+import 'rxjs/add/operator/map';     
 /*
   Generated class for the LoginProvider provider.
 
@@ -10,6 +10,7 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class LoginProvider {
+
 Token:any;
   constructor(public http: HttpClient, public _apiProvider: ApiProvider) {
     console.log('Hello LoginProvider Provider');

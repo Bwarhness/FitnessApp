@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ExerciseProvider } from '../../providers/exercise/exercise';
 
 /**
  * Generated class for the ExercisePage page.
@@ -14,8 +15,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'exercise.html',
 })
 export class ExercisePage {
-
+currentExercise = {};
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.currentExercise = navParams.data;
   }
 
   ionViewDidLoad() {

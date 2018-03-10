@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginProvider } from '../../providers/login/login';
 import { TabsPage } from '../tabs/tabs';
+import { ExerciseProvider } from '../../providers/exercise/exercise';
 
 /**
  * Generated class for the LoginPage page.
@@ -18,17 +19,28 @@ import { TabsPage } from '../tabs/tabs';
 export class LoginPage {
 Name:any = "nalar94@gmail.com";
 Password:any = "buster";
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public _loginProvider: LoginProvider) {
+loading:any = false;
+error:any = "";
+  constructor(public navCtrl: NavController, public navParams: NavParams, public _loginProvider: LoginProvider, public _exercise : ExerciseProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
   submit(){
+    this._exercise.getProgram()
+    
+    this.navCtrl.push(TabsPage);
+    
+    this.loading = true;
+
     this._loginProvider.Login(this.Name, this.Password).subscribe(
+      (data) => {
+        this.loading = false;
+      },
       () => {
-        this.navCtrl.push(TabsPage);
+        this.loading = false;
+        this.error = "An error happend. Im sorry"
       }
     )
   }

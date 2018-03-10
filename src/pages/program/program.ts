@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ExerciseProvider } from '../../providers/exercise/exercise';
+import { SessionPage } from '../session/session';
 
 /**
  * Generated class for the ProgramPage page.
@@ -15,11 +17,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProgramPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public _program: ExerciseProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProgramPage');
   }
-
+  openSession(name){
+    this.navCtrl.push(SessionPage, name)
+  }
 }

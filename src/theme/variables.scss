@@ -33,16 +33,16 @@ $app-direction: ltr;
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
-$colors: (
-  primary:  #00ffb6,
-  secondary: (
-    base: #666666,
-    contrast: #4F4F4F
-  ),
-  danger:     #f53d3d,
-  light:      #ffffff
+  $colors: (
+    primary:  #00ffb6,
+    secondary: (
+      base: #666666,
+      contrast: #4F4F4F
+    ),
+    danger:     #f53d3d,
+    light:      #ffffff
 
-);
+  );
 $toolbar-background: color($colors, secondary, contrast);
 $tabs-background: color($colors, secondary, contrast);
 

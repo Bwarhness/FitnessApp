@@ -15,7 +15,7 @@ import { ExercisePage } from '../pages/exercise/exercise';
 import { LoginProvider } from '../providers/login/login';
 import { ApiProvider } from '../providers/api/api';
 import { ExerciseProvider } from '../providers/exercise/exercise';
-
+import { LoadingModule } from 'ngx-loading';
 @NgModule({
   declarations: [
     MyApp,
@@ -26,6 +26,7 @@ import { ExerciseProvider } from '../providers/exercise/exercise';
     ExercisePage
   ],
   imports: [
+    LoadingModule,
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp)
