@@ -8,7 +8,10 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class ApiProvider {
-Api = "http://fitnessapi.webdesk-dev.dk";
+// Api = "http://fitnessapi.webdesk-dev.dk";
+Api = "http://localhost:50590";
+
+
 Token:any;
   constructor(public http: HttpClient) {
   }

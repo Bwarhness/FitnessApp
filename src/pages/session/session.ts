@@ -18,10 +18,11 @@ import { ExerciseProvider } from '../../providers/exercise/exercise';
 export class SessionPage {
 currentSession:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public _exercise: ExerciseProvider) {
-    console.log(navParams)    
-    this.currentSession = _exercise.program.sessions.find(p => p.name == navParams.data)
+    console.log(navParams);
+    console.log(this.currentSession);
+    this.currentSession = _exercise.program.Sessions.find(p => p.name == navParams.data)
     if(!this.currentSession){
-      this.currentSession = _exercise.program.sessions[0];
+      this.currentSession = _exercise.program.Sessions[0];
     }
     console.log(this.currentSession)
   }

@@ -17,58 +17,11 @@ export class ExerciseProvider {
     
   }
   getProgram(){
-    this.program = 
-    {
-      'name':'Starting Strength',
-      'sessions' : [
-        {
-          'name':'ben',
-          'exercises': [
-            {
-              'name':'squat',
-              'reps': 5,
-              'sets': 5,
-              'tempo' : 4021
-            },
-            {
-              'name':'Bænk',
-              'reps': 5,
-              'sets': 5,
-              'tempo' : 4021
-            },
-            {
-              'name':'Død',
-              'reps': 5,
-              'sets': 5,
-              'tempo' : 4021
-            }
-          ]
-        },
-        {
-          'name':'Biceps',
-          'exercises': [
-            {
-              'name':'Biceps',
-              'reps': 5,
-              'sets': 5,
-              'tempo' : 4021
-            },
-            {
-              'name':'Arm',
-              'reps': 5,
-              'sets': 5,
-              'tempo' : 4021
-            },
-            {
-              'name':'Hår',
-              'reps': 5,
-              'sets': 5,
-              'tempo' : 4021
-            }
-          ]
-        }
-      ]
-
-    }
+    return this.api.generateHTTPGet('/api/GetProgramForUser').map(
+      (p) => {
+        console.log(p);
+        this.program = p
+      }
+    )
   }
 }

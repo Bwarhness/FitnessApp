@@ -45,7 +45,10 @@ $app-direction: ltr;
   );
 $toolbar-background: color($colors, secondary, contrast);
 $tabs-background: color($colors, secondary, contrast);
-
+$tabs-md-tab-icon-color: color($colors, light);
+$tabs-md-tab-text-color:color($colors, light);
+$tabs-ios-tab-icon-color: color($colors, light);
+$tabs-ios-tab-text-color:color($colors, light);
 // base: #666666,
 // contrast: #4F4F4F
 // App iOS Variables

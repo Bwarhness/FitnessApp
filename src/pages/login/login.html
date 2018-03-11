@@ -6,7 +6,7 @@
 -->
 <ion-content padding>
     <div class="my-container">
-        <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+        <ngx-loading [show]="loading" [config]=""></ngx-loading>
         
     </div>
   <div text-center>
@@ -17,13 +17,13 @@
   <ion-list>
 
       <ion-item>
-          <ion-input type="text" placeholder="Username"></ion-input>
+          <ion-input [(ngModel)]="Username" type="text" placeholder="Email" ></ion-input>
         </ion-item>
       
         <ion-item>
-          <ion-input type="password" placeholder="Password"></ion-input>
+          <ion-input [(ngModel)]="Password" type="password" placeholder="Password"></ion-input>
         </ion-item>
-  
+  <h4 ion-text color="danger">{{error}}</h4>
   </ion-list>
   <button (click)='submit();' ion-button full >Get strong!</button>
 </ion-content>

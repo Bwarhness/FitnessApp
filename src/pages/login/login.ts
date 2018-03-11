@@ -17,26 +17,34 @@ import { ExerciseProvider } from '../../providers/exercise/exercise';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-Name:any = "nalar94@gmail.com";
-Password:any = "buster";
+Username:any;
+Password:any;
 loading:any = false;
 error:any = "";
-  constructor(public navCtrl: NavController, public navParams: NavParams, public _loginProvider: LoginProvider, public _exercise : ExerciseProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public _loginProvider: LoginProvider, public _exercise : ExerciseProvider,) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
-  submit(){
-    this._exercise.getProgram()
-    
-    this.navCtrl.push(TabsPage);
+  submit(){    
     
     this.loading = true;
-
-    this._loginProvider.Login(this.Name, this.Password).subscribe(
+    console.log(this.Username,this.Password)
+    this._loginProvider.Login(this.Username, this.Password).subscribe(
       (data) => {
-        this.loading = false;
+        this._exercise.getProgram().subscribe(
+          (test) => {
+            console.log(test)
+            this.loading = false;
+            this.navCtrl.push(TabsPage);
+          },
+          () => 
+          {
+            this.loading = false;
+            this.error = "An error happend. Im sorry"
+          }
+        )
       },
       () => {
         this.loading = false;

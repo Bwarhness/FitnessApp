@@ -19,9 +19,8 @@ Token:any;
   Login(name, password){
     let data = "username="+name+"&password="+password+"&grant_type=password"
     var reqHeader = new HttpHeaders({'Content-Type':'application/x-www-urlencoded'})
-    return this.http.post(this._apiProvider.Api + "/token", data, {headers:reqHeader}).map(p => {
-      
-      this._apiProvider.Token = p
+    return this.http.post(this._apiProvider.Api + "/token", data, {headers:reqHeader}).map((p:any) => {
+      this._apiProvider.Token = p.access_token;
     })
   }
 

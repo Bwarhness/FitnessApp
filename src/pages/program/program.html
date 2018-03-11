@@ -6,12 +6,12 @@
 
 <ion-content>
   
-    <ion-card *ngFor="let item of _program.program.sessions" (click)="openSession(item.name)">
+    <ion-card *ngFor="let item of _program.program.Sessions" (click)="openSession(item.Title)">
       
         <img src="https://www.bodybuilding.com/images/2017/april/5-things-holding-back-your-fitness-progress-header-v2-CELLUCOR-830x467.jpg"/>
         <ion-card-content>
           <ion-card-title text-center>
-            {{item.name}}
+            {{item.Title}}
             </ion-card-title>
             <ion-row text-center>
 

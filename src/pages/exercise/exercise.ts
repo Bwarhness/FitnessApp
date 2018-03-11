@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ExerciseProvider } from '../../providers/exercise/exercise';
-
+import { DomSanitizer } from '@angular/platform-browser';
 /**
  * Generated class for the ExercisePage page.
  *
@@ -14,12 +14,16 @@ import { ExerciseProvider } from '../../providers/exercise/exercise';
   selector: 'page-exercise',
   templateUrl: 'exercise.html',
 })
-export class ExercisePage {
-currentExercise = {};
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+export class ExercisePage implements OnInit{
+currentExercise:any = {};
+myUrl:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public sanitizer: DomSanitizer) {
     this.currentExercise = navParams.data;
   }
-
+  ngOnInit(){
+    this.myUrl = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.currentExercise.Exercise.VideoUrl + "?rel=0&amp;showinfo=0")
+    
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad ExercisePage');
   }

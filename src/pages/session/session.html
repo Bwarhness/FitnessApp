@@ -1,29 +1,29 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Session - {{currentSession.name}}</ion-title>
+    <ion-title>Session - {{currentSession.Title}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-    <ion-card *ngFor="let item of currentSession.exercises" (click)=openExercise(item)>
+    <ion-card *ngFor="let item of currentSession.Exercises" (click)=openExercise(item)>
       
         <img src="https://www.bodybuilding.com/images/2017/april/5-things-holding-back-your-fitness-progress-header-v2-CELLUCOR-830x467.jpg"/>
         <ion-card-content>
           <ion-card-title text-center>
-            {{item.name}}
+            {{item.Exercise.Name}}
             </ion-card-title>
             <ion-row text-center>
                 <ion-col>
-                  <p>Sets: {{item.sets}}</p>
-                  <p>Reps: {{item.reps}}</p>
+                  <p>Sets: {{item.Sets}}</p>
+                  <p>Reps: {{item.Reps}}</p>
                   
                 </ion-col>
                 <ion-col>
                     <div class="card-subtitle">30 min</div>
                 </ion-col>
                 <ion-col>
-                    <p>Tempo: {{item.tempo}}</p>
-                    <p>Pause: 5</p>
+                    <p>Tempo: {{item.Tempo}}</p>
+                    <p>Pause: {{item.MaxBreakInSeconds}}</p>
                   </ion-col>
               </ion-row>
         </ion-card-content>
