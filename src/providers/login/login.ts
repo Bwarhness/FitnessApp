@@ -12,6 +12,7 @@ import 'rxjs/add/operator/map';
 export class LoginProvider {
 
 Token:any;
+username= "";
   constructor(public http: HttpClient, public _apiProvider: ApiProvider) {
     console.log('Hello LoginProvider Provider');
     
@@ -20,7 +21,9 @@ Token:any;
     let data = "username="+name+"&password="+password+"&grant_type=password"
     var reqHeader = new HttpHeaders({'Content-Type':'application/x-www-urlencoded'})
     return this.http.post(this._apiProvider.Api + "/token", data, {headers:reqHeader}).map((p:any) => {
+
       this._apiProvider.Token = p.access_token;
+      this.username = p.userName;
     })
   }
 

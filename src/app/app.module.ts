@@ -16,11 +16,13 @@ import { LoginProvider } from '../providers/login/login';
 import { ApiProvider } from '../providers/api/api';
 import { ExerciseProvider } from '../providers/exercise/exercise';
 import { LoadingModule } from 'ngx-loading';
+import { SettingsPage } from '../pages/settings/settings';
 @NgModule({
   declarations: [
     MyApp,
     ProgramPage,
     SessionPage,
+    SettingsPage,
     TabsPage,
     LoginPage,
     ExercisePage
@@ -37,6 +39,7 @@ import { LoadingModule } from 'ngx-loading';
     MyApp,
     ProgramPage,
     SessionPage,
+    SettingsPage,
     TabsPage,
     LoginPage
 

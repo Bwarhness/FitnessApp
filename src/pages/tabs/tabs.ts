@@ -5,6 +5,8 @@ import { LoginPage } from '../login/login';
 import { SessionPage } from '../session/session';
 import { ProgramPage } from '../program/program';
 import { ExercisePage } from '../exercise/exercise';
+import { NavController } from 'ionic-angular';
+import { SettingsPage } from '../settings/settings';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -12,9 +14,9 @@ import { ExercisePage } from '../exercise/exercise';
 export class TabsPage {
   tab1Root = SessionPage;
   tab2Root = ProgramPage;
-  tab3Root = ExercisePage;
+  tab3Root = SettingsPage;
 
-  constructor() {
+  constructor(public navCtrl:NavController) {
 
   }
 }

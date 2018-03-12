@@ -33,6 +33,7 @@ error:any = "";
     console.log(this.Username,this.Password)
     this._loginProvider.Login(this.Username, this.Password).subscribe(
       (data) => {
+        console.log(data);
         this._exercise.getProgram().subscribe(
           (test) => {
             console.log(test)
