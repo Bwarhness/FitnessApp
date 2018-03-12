@@ -12,14 +12,15 @@
           <ion-card-title text-center>
             {{item.Exercise.Name}}
             </ion-card-title>
-            <ion-row text-center>
+            <ion-row text-center id="rowSplitter">
                 <ion-col>
                   <p>Sets: {{item.Sets}}</p>
                   <p>Reps: {{item.Reps}}</p>
                   
                 </ion-col>
-                <ion-col>
-                    <div class="card-subtitle">30 min</div>
+                <ion-col id="timeHolder">
+                    <h1>{{((item.Sets * 20) + (item.Sets * (item.Reps * 4)) + (item.MaxBreakInSeconds * item.Sets)) /60}}</h1>
+                    <h2>min</h2>
                 </ion-col>
                 <ion-col>
                     <p>Tempo: {{item.Tempo}}</p>

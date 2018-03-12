@@ -8,11 +8,19 @@ page-session {
 	height:0;
 	overflow:hidden;
 }
-
+#timeHolder{
+    border-left:1px solid  color($colors, secondary, contrast);
+    border-right: 1px solid color($colors, secondary, contrast);
+}
 .video-container iframe, .video-container object, .video-container embed {
 	position:absolute;
 	top:0;
 	left:0;
 	width:100%;
 	height:100%;
+}
+#rowSplitter{
+	p {
+		font-weight: 500;
+	}
 }

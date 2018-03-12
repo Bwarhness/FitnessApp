@@ -18,7 +18,8 @@
                     
                   </ion-col>
                   <ion-col id="timeHolder">
-                      <h1>30 min</h1>
+                      <h1>{{((currentExercise.Sets * 20) + (currentExercise.Sets * (currentExercise.Reps * 4)) + (currentExercise.MaxBreakInSeconds * currentExercise.Sets)) /60}}</h1>
+                      <h2>min</h2>
                   </ion-col>
                   <ion-col>
                       <p>Tempo: {{currentExercise.Tempo}}</p>
